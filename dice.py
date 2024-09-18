@@ -6,6 +6,8 @@ import collections
 import enum
 import random
 from typing import List, Sequence, Tuple
+import matplotlib.pyplot as plt
+import operator
 
 import colorama
 
@@ -74,6 +76,83 @@ class Dice:
     def roll(self) -> Sequence[Symbol]:
         return random.choice(self._sides).symbols
 
+## BEGINNING OF EXPERIMENTAL DICE
+class ExperimentalBoostDice(Dice):
+    def __init__(self):
+        super().__init__(sides=[
+            Side(symbols=[])
+        ])
+
+
+class ExperimentalAbilityDice(Dice):
+    def __init__(self):
+        super().__init__(sides=[
+            Side(symbols=[]),
+            Side(symbols=[]),
+            Side(symbols=[]),
+            Side(symbols=[Symbol.Success]),
+            Side(symbols=[Symbol.Success]),
+            Side(symbols=[Symbol.Success]),
+            Side(symbols=[Symbol.Advantage]),
+            Side(symbols=[Symbol.Advantage])
+        ])
+
+
+class ExperimentalProficiencyDice(Dice):
+    def __init__(self):
+        super().__init__(sides=[
+            Side(symbols=[]),
+            Side(symbols=[]),
+            Side(symbols=[]),
+            Side(symbols=[Symbol.Success]),
+            Side(symbols=[Symbol.Success, Symbol.Success]),
+            Side(symbols=[Symbol.Success, Symbol.Success]),
+            Side(symbols=[Symbol.Success, Symbol.Success]),
+            Side(symbols=[Symbol.Advantage]),
+            Side(symbols=[Symbol.Advantage, Symbol.Advantage]),
+            Side(symbols=[Symbol.Advantage, Symbol.Advantage]),
+            Side(symbols=[Symbol.Advantage, Symbol.Advantage]),
+            Side(symbols=[Symbol.Triumph]),
+        ])
+
+class ExperimentalSetbackDice(Dice):
+    def __init__(self):
+        super().__init__(sides=[
+            Side(symbols=[]),
+        ])
+
+
+class ExperimentalDifficultyDice(Dice):
+    def __init__(self):
+        super().__init__(sides=[
+            Side(symbols=[]),
+            Side(symbols=[]),
+            Side(symbols=[]),
+            Side(symbols=[]),
+            Side(symbols=[Symbol.Failure]),
+            Side(symbols=[Symbol.Failure]),
+            Side(symbols=[Symbol.Threat]),
+            Side(symbols=[Symbol.Threat])
+        ])
+
+
+class ExperimentalChallengeDice(Dice):
+    def __init__(self):
+        super().__init__(sides=[
+            Side(symbols=[]),
+            Side(symbols=[Symbol.Failure]),
+            Side(symbols=[Symbol.Failure]),
+            Side(symbols=[Symbol.Failure, Symbol.Failure]),
+            Side(symbols=[Symbol.Failure, Symbol.Failure]),
+            Side(symbols=[Symbol.Failure, Symbol.Threat]),
+            Side(symbols=[Symbol.Failure, Symbol.Threat]),
+            Side(symbols=[Symbol.Threat]),
+            Side(symbols=[Symbol.Threat]),
+            Side(symbols=[Symbol.Threat, Symbol.Threat]),
+            Side(symbols=[Symbol.Threat, Symbol.Threat]),
+            Side(symbols=[Symbol.Despair])
+        ])
+## END OF EXPERIMENTAL DICE
 
 class BoostDice(Dice):
     def __init__(self):
@@ -94,9 +173,9 @@ class AbilityDice(Dice):
             Side(symbols=[Symbol.Success]),
             Side(symbols=[Symbol.Success]),
             Side(symbols=[Symbol.Success, Symbol.Success]),
-            Side(symbols=[Symbol.Advantage]),
-            Side(symbols=[Symbol.Advantage]),
             Side(symbols=[Symbol.Success, Symbol.Advantage]),
+            Side(symbols=[Symbol.Advantage]),
+            Side(symbols=[Symbol.Advantage]),
             Side(symbols=[Symbol.Advantage, Symbol.Advantage]),
         ])
 
@@ -109,15 +188,14 @@ class ProficiencyDice(Dice):
             Side(symbols=[Symbol.Success]),
             Side(symbols=[Symbol.Success, Symbol.Success]),
             Side(symbols=[Symbol.Success, Symbol.Success]),
+            Side(symbols=[Symbol.Success, Symbol.Advantage]),
+            Side(symbols=[Symbol.Success, Symbol.Advantage]),
+            Side(symbols=[Symbol.Success, Symbol.Advantage]),
             Side(symbols=[Symbol.Advantage]),
-            Side(symbols=[Symbol.Success, Symbol.Advantage]),
-            Side(symbols=[Symbol.Success, Symbol.Advantage]),
-            Side(symbols=[Symbol.Success, Symbol.Advantage]),
             Side(symbols=[Symbol.Advantage, Symbol.Advantage]),
             Side(symbols=[Symbol.Advantage, Symbol.Advantage]),
             Side(symbols=[Symbol.Triumph]),
         ])
-
 
 class SetbackDice(Dice):
     def __init__(self):
@@ -137,11 +215,11 @@ class DifficultyDice(Dice):
             Side(symbols=[]),
             Side(symbols=[Symbol.Failure]),
             Side(symbols=[Symbol.Failure, Symbol.Failure]),
+            Side(symbols=[Symbol.Failure, Symbol.Threat]),
             Side(symbols=[Symbol.Threat]),
             Side(symbols=[Symbol.Threat]),
             Side(symbols=[Symbol.Threat]),
-            Side(symbols=[Symbol.Threat, Symbol.Threat]),
-            Side(symbols=[Symbol.Failure, Symbol.Threat])
+            Side(symbols=[Symbol.Threat, Symbol.Threat])
         ])
 
 
@@ -153,10 +231,10 @@ class ChallengeDice(Dice):
             Side(symbols=[Symbol.Failure]),
             Side(symbols=[Symbol.Failure, Symbol.Failure]),
             Side(symbols=[Symbol.Failure, Symbol.Failure]),
-            Side(symbols=[Symbol.Threat]),
-            Side(symbols=[Symbol.Threat]),
             Side(symbols=[Symbol.Failure, Symbol.Threat]),
             Side(symbols=[Symbol.Failure, Symbol.Threat]),
+            Side(symbols=[Symbol.Threat]),
+            Side(symbols=[Symbol.Threat]),
             Side(symbols=[Symbol.Threat, Symbol.Threat]),
             Side(symbols=[Symbol.Threat, Symbol.Threat]),
             Side(symbols=[Symbol.Despair])
@@ -179,10 +257,29 @@ class DiceColor(enum.Enum):
             names.append(dice_color.name)
         return names
 
+@enum.unique
+class ExperimentalDiceColor(enum.Enum):
+    b = ExperimentalBoostDice
+    g = ExperimentalAbilityDice
+    y = ExperimentalProficiencyDice
+    k = ExperimentalSetbackDice
+    p = ExperimentalDifficultyDice
+    r = ExperimentalChallengeDice
+
+    @classmethod
+    def names(cls) -> List[str]:
+        names = []
+        for dice_color in cls:
+            names.append(dice_color.name)
+        return names
+
 
 def dice_from_color_char(color_char: str) -> Dice:
     try:
-        dice_color = DiceColor[color_char]
+        if DicePool.is_experimental:
+            dice_color = ExperimentalDiceColor[color_char]
+        else:
+            dice_color = DiceColor[color_char]
     except KeyError:
         raise ValueError('Invalid dice color: {}.  Possible choices are: {}'.format(
             color_char,
@@ -250,6 +347,8 @@ class DicePoolMean:
 
 
 class DicePool:
+    is_experimental=False
+
     def __init__(self, pool: Sequence[Dice]):
         self._pool = pool
 
@@ -267,8 +366,38 @@ class DicePool:
                                                            advantage_cutoff,
                                                            despair_cutoff))
 
+    def probability(self,
+                          triumph_cutoff: int = None,
+                          success_cutoff: int = None,
+                          advantage_cutoff: int = None,
+                          despair_cutoff: int = None) -> float:
+        return self.distribution.probability(cutoff=(triumph_cutoff,
+                                                           success_cutoff,
+                                                           advantage_cutoff,
+                                                           despair_cutoff))
+
+    def probability_with_operator(self,
+                        triumph_cutoff: Tuple[int,operator]=None,
+                        success_cutoff: Tuple[int,operator]=None,
+                        advantage_cutoff: Tuple[int,operator]=None,
+                        despair_cutoff: Tuple[int,operator]=None) -> float:
+        return self.distribution.probability_with_operator(cutoff_with_operator=(triumph_cutoff,
+                                                           success_cutoff,
+                                                           advantage_cutoff,
+                                                           despair_cutoff))
+
+
     def mean(self) -> DicePoolMean:
         return DicePoolMean(self.distribution.mean())
+
+    def mean_tuple(self) -> Tuple[int, int, int, int]:
+        return self.distribution.mean()
+
+    def median(self) -> Tuple[int, int, int, int]:
+        return self.distribution.median()
+    
+    def standard_deviation(self) -> Tuple[float, float, float, float]:
+        return self.distribution.standard_deviation()
 
     def roll(self) -> List[Symbol]:
         symbols = []
@@ -384,6 +513,60 @@ class DicePool:
         except KeyError:
             raise ValueError('Invalid dice character given: {}'.format(dice_char))
 
+    @staticmethod
+    def _good_dice_to_string(pool_string: str) -> str:
+        dice_chars = []
+
+        for dice_char in pool_string:
+            try:
+                dice_color = DiceColor[dice_char]
+                if dice_color is DiceColor.y or dice_color is DiceColor.g or dice_color is DiceColor.b:
+                    dice_chars.append(dice_char)
+            except KeyError:
+                raise ValueError('Invalid dice character given: {}'.format(dice_char))
+
+        dice_chars.sort(key=DicePool._sort_dice_by_power)
+
+        return ''.join(dice_chars)
+
+    @staticmethod
+    def _bad_dice_to_string(pool_string: str) -> str:
+        dice_chars = []
+
+        for dice_char in pool_string:
+            try:
+                dice_color = DiceColor[dice_char]
+                if not (dice_color is DiceColor.y or dice_color is DiceColor.g or dice_color is DiceColor.b):
+                    dice_chars.append(dice_char)
+            except KeyError:
+                raise ValueError('Invalid dice character given: {}'.format(dice_char))
+
+        dice_chars.sort(key=DicePool._sort_dice_by_power)
+
+        return ''.join(dice_chars)
+        
+    @staticmethod
+    def _upgrade_dice_pool_string_with_proficency(pool_string: str,upgrade: int=0) -> str:
+        dice_chars = []
+        for dice_char in pool_string:
+            dice_chars.append(dice_char)
+
+        for i in range(0,upgrade):
+            for z,dice_char in enumerate(dice_chars):
+                try:
+                    dice_color = DiceColor[dice_char]
+                    if dice_color is DiceColor.g:
+                        dice_chars[z]='y'
+                        break
+                except KeyError:
+                    raise ValueError('Invalid dice character given: {}'.format(dice_char))
+            else:
+                #no green dice found, we should add one.
+                dice_chars.append('g')
+
+        dice_chars.sort(key=DicePool._sort_dice_by_power)        
+        return ''.join(dice_chars)
+
     @classmethod
     def from_string(cls, pool_string: str) -> 'DicePool':
         dice_chars = []
@@ -396,3 +579,14 @@ class DicePool:
             pool.append(dice_from_color_char(dice_char))
 
         return cls(pool)
+
+    def to_string(self) -> str:
+        dice_chars = []
+        for dice in self._pool:
+            if DicePool.is_experimental:
+                dice_color = ExperimentalDiceColor(type(dice))
+            else:
+                dice_color = DiceColor(type(dice))
+            dice_chars.append(dice_color.name)
+
+        return ''.join(dice_chars)
