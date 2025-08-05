@@ -1,60 +1,60 @@
-# Ameliorer le systeme de dées de Star Wars FFG ?
+# Améliorer le système de dés de Star Wars FFG ?
 
-J'aime ce systeme, j'aime l'aspect narratif et le fait d'avoir des dés spécifique qui représente differentes facettes des evenements de notre univers.
+J'aime ce système, j'aime l'aspect narratif et le fait d'avoir des dés spécifiques qui représentent différentes facettes des événements de notre univers.
 
-Pourtant à l'usage, j'ai l'impression que certaines promesses ne sont pas tenus, et que cela n'est pas juste, ni pour les joueurs, ni pour les MJ, c'est pourquoi nous allons décorticer en détails tout ca.
+Pourtant à l'usage, j'ai l'impression que certaines promesses ne sont pas tenues, et que cela n'est pas juste, ni pour les joueurs, ni pour les MJ, c'est pourquoi nous allons décortiquer en détails tout cela et peut-être proposer un nouveau système compatible avec les règles mais ajusté, ou en tout cas permettre aux MJ de mieux équilibrer leurs scénarios.
 
 > [!Caution]
-> Chacun est différent, nous avons tous des attentes particulière face au jdr, les informations qui vont suivrent reflètes ma propre vision du jeu de role, avec un bon bout de philosophie de comptoir. Vous trouverez ici [1](https://ttftcuts.github.io/sw_dice/),[2](https://illuminatinggames.wordpress.com/2014/09/19/star-wars-age-of-rebellion-a-deep-dive-on-dice-probabilities/),[3](http://rpg-design.wikidot.com/evaluation),[4](https://github.com/johnthagen/eote-dice),[5](https://web.archive.org/web/20160522070459/http://maxmahem.net/wp/star-wars-edge-of-the-empire-die-probabilities/) l'ensemble des travaux deja effectuer par la communauté, que je remercie chaleureusement.
-> L'écriture n'est pas ma compétence principal, j'espère que ce qui vas suivre ne serat pas trop indigèste.
+> Chacun est différent, nous avons tous des attentes particulières face au JdR, les informations qui vont suivre reflètent ma propre vision du jeu de rôle, avec un bon bout de philosophie de comptoir. Vous trouverez ici [1](https://ttftcuts.github.io/sw_dice/),[2](https://illuminatinggames.wordpress.com/2014/09/19/star-wars-age-of-rebellion-a-deep-dive-on-dice-probabilities/),[3](http://rpg-design.wikidot.com/evaluation),[4](https://github.com/johnthagen/eote-dice),[5](https://web.archive.org/web/20160522070459/http://maxmahem.net/wp/star-wars-edge-of-the-empire-die-probabilities/) l'ensemble des travaux déjà effectués par la communauté, que je remercie chaleureusement.
+> L'écriture n'est pas ma compétence principale, j'espère que ce qui va suivre ne sera pas trop indigeste.
 
 # Introduction
 
-Dans cette article nous allons voir qu'il n'y a aucun système parfait dans l'absolu, ce que je rechèrche c'est un système qui soutient l'intention des créateurs, l'ambiance, et le plaisir de jeu!
+Dans cet article nous allons voir qu'il n'y a aucun système parfait dans l'absolu, ce que je recherche c'est un système qui soutient l'intention des créateurs, l'ambiance, et le plaisir de jeu !
 
-Pour cela nous allons analyser en détails le système de dés pour voir comment celui ci s'intègre a la narration.
+Pour cela nous allons analyser en détails le système de dés pour voir comment celui-ci s'intègre à la narration et quelles sont ses limites.
 
 > [!Important]
-> Nous allons aborder ici des probabilités et quelques concepts mathématique, selon moi c'est essentiel dans cette phase de design/reflexion car tout système, qu'on le veuille ou non est purement un concept mathématique. Cependant, la beauté selon moi réside dans le fait que toutes ces mathématiques forment un socle necessaire, mais qui s'éffaceras pendant la partie pour faire briller la narration. [6](https://www.scientificamerican.com/article/is-the-universe-made-of-math-excerpt/)
+> Nous allons aborder ici des probabilités et quelques concepts mathématiques, selon moi c'est essentiel dans cette phase de design/réflexion car tout système, qu'on le veuille ou non est purement un concept mathématique. Cependant, la beauté réside dans le fait que toutes ces mathématiques forment un socle nécessaire, mais qui s'effacera pendant la partie pour faire briller la narration. [6](https://www.scientificamerican.com/article/is-the-universe-made-of-math-excerpt/)
 
 ## Nos attentes
 
-Nos décision sont souvent basé sur une interpretation intuitive de nos chance de réussite, notre cerveau arbitre en parmanence le reel pour faire des choix.
+Nos décisions sont souvent basées sur une interprétation intuitive de nos chances de réussite, notre cerveau arbitre en permanence le réel pour faire des choix.
 
-Ce concept est selon moi extremement important et doit se retrouver dans le jdr. Dans le monde reel connaissant mes capacités physique je sais estimer si j'ai de bonnes chances de gagner un bras de fer contre mes amis lors d'un paris.
+Ce concept est selon moi extrêmement important et doit se retrouver dans le JdR. Dans le monde réel connaissant mes capacités physiques je sais estimer si j'ai de bonnes chances de gagner un bras de fer contre mes amis lors d'un pari.
 
-Mon cerveau arbitre la situation, peut-etre certaines circonstance augmente mes chances de reussite? mon amis étant certe plus musclé, mais surtout très ivre aujourd-hui.
+Mon cerveau arbitre la situation, peut-être certaines circonstances augmentent mes chances de réussite ? Mon ami étant certes plus musclé, mais surtout très ivre aujourd'hui.
 
-Il y'a deux choses interessante:
-- Nous faisons cet arbitrage tout le temps, et c'est je pense intrasèque aus espèces `intelligente` et a leur fonctionnement intuitif pour ne pas avoir a tout "conscientiser" et économiser des resources.
-- Notre cerveau est un faux amis, et il n'est pas extremement précis a cette tache.
+Il y a deux choses intéressantes :
+- Nous faisons cet arbitrage tout le temps, et c'est intrinsèque aux espèces « intelligentes » et à leur fonctionnement intuitif pour ne pas avoir à tout « conscientiser » et économiser des ressources.
+- Notre cerveau est un faux ami, et il n'est cependant pas extrêmement précis à cette tâche.
 
-Bien que je puisse estimer mes chances de réussite, même en étant confiant a 90%, il reste ces 10% d'echec. Il reste également tout ce dont je n'avais pas connaissance et qui a pu biaier mon estimation.
+Bien que je puisse estimer mes chances de réussite, même en étant confiant à 90%, il reste ces 10% d'échec. Il reste également tout ce dont je n'avais pas connaissance et qui a pu biaiser mon estimation.
 
-Chaque fois que l'on prend une décision, cela est facteur de notre estimation des *chance de réussite*, ainsi que du *risque* en cas d'echec, et du *résultat* de succès.
+Chaque fois que l'on prend une décision, cela est fonction de notre estimation des *chances de réussite*, ainsi que du *risque* en cas d'échec, et du *résultat* de succès.
 
-Chance de réussite, risque et résultat sont d'ailleurs très bien représenté conceptuellement avec nos difrérentes couleurs de dés!
+Chances de réussite, risque et résultat sont d'ailleurs très bien représentés conceptuellement avec nos différentes couleurs de dés !
 
-## Un système doit etre juste
+## Un système doit être juste
 
-Avec la petite réfléxion ci-dessus nous pouvons définir le concept de justesse d'un jeu de role.
+Avec la petite réflexion ci-dessus nous pouvons définir le concept de justesse d'un jeu de rôle.
 
 > [!IMPORTANT]
-> un système juste, est un système dans lequel un joueur *sait* estimer ses chances de réussites pour prendre les meilleurs décisions. C'est également un système cohérent qui collent aux attentes et interpretation intuitive des evenements de l'univers.
+> Un système juste, est un système dans lequel un joueur *sait* estimer ses chances de réussites pour prendre les meilleures décisions. C'est également un système cohérent qui colle aux attentes et interprétations intuitives des événements de l'univers.
 
-Ce concept est très différent de la difficulté intrasèque. Par example dans un JDR zombie, même si je suis un athlète, mes chances de me faufilé dans une horde de zombie sont faible.
+Ce concept est très différent de la difficulté intrinsèque. Par exemple dans un JdR zombie, même si je suis un athlète, mes chances de me faufiler dans une horde de zombies sont faibles.
 
-Cela fait sens car l'objectif et l'ambiance sont bien spécifique et on veux ressentir la peur et le danger, nos personnages ne sont pas necessairement des héros aux capacités hors du commun.
+Cela fait sens car l'objectif et l'ambiance sont bien spécifiques et on veut ressentir la peur et le danger, nos personnages ne sont pas nécessairement des héros aux capacités hors du commun.
 
-Dans star wars l'introduction du livre de règle nous précise que l'on vas chercher l'epic! les actions grandiose et les cabrioles à la caméra! Et nous ne souhaitons pas (selon moi) que ce même jet puisse entrainer une mort définitive.
+Dans Star Wars l'introduction du livre de règle nous précise que l'on va chercher l'épique ! Les actions grandioses et les cabrioles à la caméra ! Et nous ne souhaitons pas (selon moi) que ce même jet puisse entraîner une mort définitive.
 
-Dans les deux cas je dois être en mesure d'estimer mes chances de réussites, cela ne veux pas dire que mon estimation est correcte 100% du temps, mais cela dois fonctionner en moyenne, être *juste* pour les joueurs et leur prise de décision
+Dans les deux cas je dois être en mesure d'estimer mes chances de réussites, cela ne veut pas dire que mon estimation est correcte 100% du temps, mais cela doit fonctionner en moyenne, être *juste* pour les joueurs et leur prise de décision.
 
-Je ne sais pas si ce texte fait bien transparaitre mes pensées, mais c'est la pierre angulaire des idées qui vont suivrent et *tout* est basé la dessus. En conséquence, si vous n'etes pas dacord avec ceci vous risquez de trouver le reste absurde.
+Je ne sais pas si ce texte fait bien transparaître mes pensées, mais c'est la pierre angulaire des idées qui vont suivre et *tout* est basé là-dessus. En conséquence, si vous n'êtes pas d'accord avec ceci vous risquez de trouver le reste absurde.
 
-## Dés, evenements et probabilité
+## Dés, événements et probabilité
 
-Dans ce chapitre nous allons observer certains scénario (pool de dés) pour etudier les probabilités et voir si cela correspond a ce que nous attendons, voir si cela nous semble juste et équilibrer. Cet exercice est un peu difficile si pris séparrément, le plus interessant interviendras lorsque nous comparerons différents pool de dés entre eux.
+Dans ce chapitre nous allons observer certains scénarios (pool de dés) pour étudier les probabilités et voir si cela correspond à ce que nous attendons, voir si cela nous semble juste et équilibré. Cet exercice est un peu difficile si pris séparément, le plus intéressant interviendra lorsque nous comparerons différents pools de dés entre eux.
 
 ### Distribution
 
@@ -78,12 +78,12 @@ Avant de regarder en détails les scénario, voyons ensemble les différents typ
 
 L'axe du bas nous indique le nombres de symbole (ici des succès) et les points de la courbe nous montre la probabilité d'obtenir ce nombre de symbol.
 
-Dans notre cas présent avec deux dés vert deux dés violet, la probabilité d'obtenir *exactement* 1 succès est de 25%.
+Dans notre cas présent avec deux dés verts et deux dés violets, la probabilité d'obtenir *exactement* 1 succès est de 25%.
 
-Les valeur des probabilités sont interessante, mais c'est également la forme de la courbe qui nous donne énormément d'information, que nous verrons plus tard.
+Les valeurs des probabilités sont intéressantes, mais c'est également la forme de la courbe qui nous donne énormément d'informations, que nous verrons plus tard.
 
 > [!Caution]
-> nous avons toujours un nombre entier de Symbol. 0 ou 1 ou 2. il est impossible d'avoir un demi (0,5) symbol. Le format de la courbe ci dessus ne représente pas très bien cela, mais c'est le plus lisible lorsqu'nous allons ajouter plusieurs lignes.
+> Nous avons toujours un nombre entier de symboles. 0 ou 1 ou 2. Il est impossible d'avoir un demi (0,5) symbole. Le format de la courbe ci-dessus ne représente pas très bien cela, mais c'est le plus lisible lorsque nous allons ajouter plusieurs lignes.
 
 #### Distribution Cumulés de symboles
 
@@ -98,37 +98,37 @@ Les valeur des probabilités sont interessante, mais c'est également la forme d
 
 ![Distribution des Success cumulés sur un pool de ggpp](../stats/standard/ggpp-s-single-above.png "Distribution des Success cumulés sur un pool de ggpp")
 
-Ici nous avons des probabilités cumulés, c'est à dire que la probabilité en un point, corréspond aux probabilités d'obtenir 1 *ou plus* de success, c'est très interessant car dans le système star wars, cela nous dis quel sont nos chances de reussir l'action
+Ici nous avons des probabilités cumulées, c'est-à-dire que la probabilité au point x=1, correspond aux probabilités d'obtenir 1 *ou plus* de succès, c'est très intéressant car dans le système Star Wars, cela nous dit quelles sont nos chances de réussir l'action.
 
-Ici la probabilité d'avoir 1 succès net est de 44%.
+Ici la probabilité d'avoir 1 succès ou plus est de 44%.
 
 #### Distribution spécial
 
-Dans le systeme star wars il y'a 4 grand type de résultat de dés
+Dans le système Star Wars il y a 4 grands types de résultat de dés :
 
-- Echec sans avantage (pas de succès net et pas d'avantage net. noté s-/a-)
-- Echec avec avantage (pas de succès net et au moins un avantage net. noté s-/a+)
-- Success sans avantage (au moins un Succès net et pas d'avantage net. noté s+/a-)
-- Success avec avantage (au moins un succès net et au moins un avantage net. noté s+/a+)
-- Success avec 3+ avantage (cas spécial interessant pour activer certains attributs d'armes. noté S+/+3a)
-- Success avec au moins un triomphe (noté s+/T+)
+- Échec **sans** avantage (pas de succès net et pas d'avantage net. noté s-/a-)
+- Échec **avec** avantage (pas de succès net et au moins un avantage net. noté s-/a+)
+- Succès **sans** avantage (au moins un succès net et pas d'avantage net. noté s+/a-)
+- Succès **avec** avantage (au moins un succès net et au moins un avantage net. noté s+/a+)
+- Succès **avec** 3+ avantages (cas spécial intéressant pour activer certains attributs d'armes. noté S+/+3a)
+- Succès **avec** au moins un triomphe (cas spécial noté s+/T+)
 
 <details>
 <summary>Commande</summary>
 
 ```sh
     python3 eote_dice.py -p ggpp plot combined
-   # combined, sous commande de plot, pour afficher ces 5 type de résultat.
+   # combined, sous commande de plot, pour afficher ces 6 type de résultat.
 ```
 </details>
 
 ![Affichage spécial sur un pool de ggpp](../stats/standard/ggpp-combined.png "Affichage spécial sur un pool de ggpp")
 
-Ici l'affichage montre la probabilité de chacun des cas spéciaux, ce seras particulièrement interessant pour comprendre le "transfert" de probabilité lors d'une modification du pool de dés.
+Ici l'affichage montre la probabilité de chacun des cas spéciaux, ce sera particulièrement intéressant pour comprendre le « transfert » de probabilité lors d'une modification du pool de dés.
 
-### Le patient 0.
+### Le patient 0 et la courbe d'avantage.
 
-J'arrive après la bataille car beaucoup d'articles ont déja débatus et montré les limites du système(TOTO LINK).Cependant, en jouant avec les pool de dés, voici le graph qui m'a donné envie de pousser le raisonnement plus loin.
+J'arrive après la bataille car beaucoup d'articles ont déjà débattu et montré les limites du système. Cependant, en jouant avec les pools de dés, voici le graphique qui m'a donné envie de pousser le raisonnement plus loin.
 
 <details>
 <summary>Commande</summary>
@@ -141,14 +141,14 @@ J'arrive après la bataille car beaucoup d'articles ont déja débatus et montr�
 
 ![Distribution des Avantages cumulés sur un pool de gggppp avec 6 upgrade](../stats/standard/gggppp-single-a-u6.png "Distribution des Avantages cumulés sur un pool de gggppp avec 6 upgrade")
 
-Ici nous affichons les probabilités cumulés d'avantages, en partant d'un pool de 3 vert 3 violet, et en faisant 6 améliorations.
+Ici nous affichons les probabilités cumulées d'avantages, en partant d'un pool de 3 verts 3 violets, et en faisant 6 améliorations.
 
-Informations interessantes:
+Informations intéressantes :
 
 > [!Important]
-> - entre 3 vert et 3 jaunes, il n'y a *aucune* différences significatives sur le nombres d'avantages.
-> - ajouter un dés, augmente significativement les chances d'avantages, c'est le gap entre les groupes de ligne.
-> - la probabilité d'avoir au moins 3 avantages est relativement faible(surtout qu'ici cela peut-etre sans succès, on ne parle que des avantages)
+> - Entre 3 verts et 3 jaunes, il n'y a *aucune* différence significative sur le nombre d'avantages.
+> - Ajouter un dé, augmente significativement les chances d'avantages, c'est le gap entre les groupes de lignes.
+> - La probabilité d'avoir au moins 3 avantages est relativement faible (surtout qu'ici cela peut être sans succès, on ne parle que des avantages).
 
 Continuons avec le même graphe sur la distribution des succès.
 
@@ -163,13 +163,13 @@ Continuons avec le même graphe sur la distribution des succès.
 ![Distribution des Avantages cumulés sur un pool de gggppp avec 6 upgrade](../stats/standard/gggppp-single-a-u6-above.png "Distribution des Avantages cumulés sur un pool de gggppp avec 6 upgrade")
 
 > [!Important]
-> - une amélioration de dée ajoute 5% de chance d'avoir au moins un succès net. (équivalent a +1 en système dnd)
-> - une amélioration peut être faite grace a un point de destin.
-> - on obsèrve encore le gap de *+10%* lors de l'ajout d'un dé vert.
+> - Une amélioration de dé ajoute 5% de chance d'avoir au moins un succès net. (équivalent à +1 en système D&D)
+> - Une amélioration peut être faite grâce à un point de destin.
+> - On observe encore le gap de *+10%* lors de l'ajout d'un dé vert.
 
-Ces informations bien qu'interessante ne sont pas des reproches, encore une fois tout est question d'attente et d'équilibre, nous pouvons néanmoins nous poser la question, est-ce que cela nous semble juste et cohérent?
+Ces informations bien qu'intéressantes ne sont pas des reproches, encore une fois tout est question d'attente et d'équilibre, nous pouvons néanmoins nous poser la question, est-ce que cela nous semble juste et cohérent ?
 
-Nous pouvons continuer avec nos cas spéciaux, avec seulement 3 upgrade pour plus de clareté.
+Nous pouvons continuer avec nos cas spéciaux, avec seulement 3 upgrades pour plus de clarté.
 
 <details>
 <summary>Commande</summary>
@@ -183,11 +183,11 @@ Nous pouvons continuer avec nos cas spéciaux, avec seulement 3 upgrade pour plu
 ![Affichage spécial sur un pool de gggppp avec 3 upgrade](../stats/standard/gggppp-combined-u3.png "Affichage spécial sur un pool de gggppp avec 3 upgrade")
 
 > [!Important]
-> avec 3 jaune et 3 violet:
-> - *12%* de chance d'avoir au moins 1 succes et 1 avantages.
-> - *1%* de chance d'avoir au moins 1 succes et 3 avantages.
-> - *15%* de chance d'avoir au moins 1 succes et 1 triomphe.
-> - Il y'a donc plus de chance de succes "critique" que de succes avec 1 avantage.
+> Avec 3 jaunes et 3 violets :
+> - *12%* de chance d'avoir au moins 1 succès et 1 avantage.
+> - *1%* de chance d'avoir au moins 1 succès et 3 avantages.
+> - *15%* de chance d'avoir au moins 1 succès et 1 triomphe.
+> - Il y a donc plus de chance de succès « critique » que de succès avec 1 avantage.
 
 <!-- TODO relire règles sur triple avantage dans les attributs d'armes -->
 
@@ -196,33 +196,133 @@ Nous pouvons continuer avec nos cas spéciaux, avec seulement 3 upgrade pour plu
 Sortons un peu des chiffres pour expliquer conceptuellement ce que nous venons de voir.
 
 > [!Important]
-> - Acheter des rangs de compétences n'augmente pas nos chances de succès significativement.
+> - Acheter des rangs de compétences augmente faiblement nos chances de succès.
 > - Acheter des rangs de compétences n'augmente pas nos chances d'avantage significativement.
-> - Acheter des rangs de compétences augmente drastiquement nos chances de triomphe.
+> - Acheter des rangs de compétences augmente significativement nos chances de triomphe.
 
 > [!Note]
 > Les points remontés ci-dessus on été discuté en détails sur ces posts [2](https://illuminatinggames.wordpress.com/2014/09/19/star-wars-age-of-rebellion-a-deep-dive-on-dice-probabilities/),[7](https://www.reddit.com/r/swrpg/comments/5rnr35/deep_dive_into_dice_probabilities/)
 
 Pour résumer les articles linké et ce que nous venons de voir, améliorer un dée en jaune n'offre que des chances de triomphe, pour certaines compétences comme medecine cela peut-être intéréssant, mais en **moyenne** votre personnage ne réussiras pas beaucoup mieux.
 
-Conceptuellement cela me gène, car l'experience des compétences symbolisé par les dés jaune (principalement) devrais dans mon interpretation intuitive, fournir de plus grande chance de succès ou peut-être, moins de chance que les choses ce passent mal, c'est à dire, plus d'avantage ?
+Conceptuellement cela me gêne, car l'expérience des compétences symbolisée par les dés jaunes (principalement) devrait dans mon interprétation intuitive, fournir de plus grandes chances de succès ou peut-être, moins de chance que les choses se passent mal, c'est-à-dire, plus d'avantages ?
 
-Il y'a d'autre choses à prendre en compte que nous verrons plus tard mais cela représente déja un bon terrain de réfléxion et on touche ici le coeur de l'équilibrage et surtout le coeur des attentes personnels que je décrivais plus haut (et qui sont très bien définis ici [3](http://rpg-design.wikidot.com/evaluation))
+Il y a d'autres choses à prendre en compte que nous verrons plus tard mais cela représente déjà un bon terrain de réflexion et on touche ici le cœur de l'équilibrage et surtout le cœur des attentes personnelles que je décrivais plus haut (et qui sont très bien définies ici [3](http://rpg-design.wikidot.com/evaluation)).
 
 #### Ajouter des dés
 
-Une des remarques, que l'on a déja un petit peu observé est le fait qu'ajouter des dés semble toujours bien supérieur en tèrme de reussite moyenne.
+Une des remarques, que l'on a déjà un petit peu observée est le fait qu'ajouter des dés semble toujours bien supérieur en terme de réussite moyenne.
 
-Regardons ça avec les dés bleu de Boost.
+Regardons ça avec les dés bleus de Boost.
 
-#### L'impact des dés bleu, et l'incohérence de l'usage du triomphe.
+### L'impact des dés bleu.
 
-Dans les règles il y'a plusieurs facon d'obtenir un dée bleu:
+Dans les règles il y a plusieurs façons d'obtenir un dé bleu :
 
-- Dépenser un avantage lors d'un test, pour donner un dée bleu au personnage suivant (valabe pour plusieurs avantages)
-- viser
-- TODO autre ?
+- Dépenser un avantage lors d'un test, pour donner un dé bleu au personnage suivant (valable pour plusieurs avantages)
+- Viser
+- Avoir un avantage environnemental ou externe (peut être demandé par le joueur s'il fait preuve d'inventivité)
 
-Pour obtenir un dée jaune cependant, seul le point de destin et depenser un triomphe (TODO verifier)
+Cependant, pour obtenir une amélioration de dé jaune supplémentaire, seuls le point de destin et dépenser un triomphe sont disponibles.
+
+<details>
+<summary>Commande</summary>
+
+```sh
+    python3 eote_dice.py -C -a -p gggbppp -p ggyppp -p gggppp plot compare -s s
+```
+</details>
+
+![Distribution des Succes cumulés sur un pool comparatif entre gggppp, ggyppp et gggbppp](../stats/standard/ppp-compare-g-y-b-u0-above.png "Distribution des Succes cumulés sur un pool comparatif entre gggppp, ggyppp et gggbppp")
+
+Ici nous voyons qu'ajouter un dé bleu est égal à améliorer un dé en terme de succès cumulé.
+
+<details>
+<summary>Commande</summary>
+
+```sh
+    python3 eote_dice.py -C -a -p gggbppp -p ggyppp -p gggppp plot compare -s s
+```
+</details>
+
+![Distribution des Avantages cumulés sur un pool comparatif entre gggppp, ggyppp et gggbppp](../stats/standard/ppp-compare-g-y-b-u0-above-advantage.png "Distribution des Avantages cumulés sur un pool comparatif entre gggppp, ggyppp et gggbppp")
+
+Ici nous voyons qu'ajouter un dé bleu est significativement **meilleur** qu'améliorer un dé jaune en terme d'avantages cumulés.
+
+<details>
+<summary>Commande</summary>
+
+```sh
+    python3 eote_dice.py -C -a -p gggbppp -p ggyppp -p gggppp plot combined
+```
+</details>
+
+![Affichage spécial sur un pool comparatif entre gggppp, ggyppp et gggbppp](../stats/standard/ppp-combined-g-y-b-u0.png "Affichage spécial sur un pool sur un pool comparatif entre gggppp, ggyppp et gggbppp")
+
+Ici l'impact du dé bleu est très intéressant, il augmente significativement les chances de succès avec avantage et est meilleur dans tous les cas sauf dans le cas du triomphe.
+
+> [!Note]
+> Les chances de succès avec triomphe sont de **5%** soit équivalent au 20 dans un système d20.
+
+Utiliser un triomphe pour améliorer un dé n'est pas rentable, vous consommez votre triomphe, qui avait peu de chance de se produire, pour ajouter 5% de chance de triomphe.
+
+Cela se rapproche alors de la confirmation de critique des anciens systèmes D&D, et les probabilités de faire de bons résultats sur des jets successifs sont vraiment mauvaises.
+
+Il est donc vraiment préférable d'utiliser le triomphe pour son aspect libre/narratif.
+
+Les points de destin, qui dans les règles sont censés avoir un gros impact, ne valent pas non plus le coup d'être utilisés pour améliorer des dés, il est toujours préférable d'utiliser leur aspect libre/narratif.
+
+> Nous voyons ici une des premières limites, les dés jaunes sont intéressants mais n'ont pas du tout la puissance qui leur est accordée dans les règles.
+
+> [!Note]
+> Biais des tailles de dé : dans un certain nombre de systèmes classiques, nous avons l'habitude de devoir faire de gros chiffres, avec cela plus le dé a de faces, plus il est intéressant, 1d12 est mieux qu'1d6.
+> Ici nos dés bleus à 6 faces nous semblent plus faibles que nos dés verts, qui semblent plus faibles que nos dés jaunes, à la fois parce que dans les règles ils sont décrits comme moins impactants, et à cause de ce biais.
 
 
+### Maxer les compétences à la création de personnages
+
+Un point qui revient régulièrement dans les articles est le fait qu'acheter des points de caractéristique est essentiel et bien supérieur que de choisir des compétences ou des points de talents. En prenant en compte que seule la création de personnage le permet la question est intéressante car elle peut créer de gros désavantages et un sentiment d'injustice dans le groupe sur le long terme.
+
+Prenons l'exemple d'un personnage qui garde sa stat élevée naturelle de trois en Agilité et qui prend deux rangs de pilotage, comparé à un personnage qui choisit de mettre 4 en Agilité et qui n'a aucun rang de pilotage.
+
+<details>
+<summary>Commande</summary>
+
+```sh
+    python3 eote_dice.py -C -a -p ggggppp -p gyyppp  plot compare -s s
+```
+</details>
+
+![Distribution de succès cumulé sur un pool comparatif entre ggggppp, gyyppp](../stats/standard/ppp-compare-gggg-gyy-u0-above-success.png "Distribution de succès cumulé sur un pool comparatif entre ggggppp, gyyppp")
+
+Ici on observe aucune différence significative sur la distribution des succès (voir légèrement supérieur pour le 4 Agilité).
+
+<details>
+<summary>Commande</summary>
+
+```sh
+    python3 eote_dice.py -C -a -p ggggppp -p gyyppp  plot compare -s a
+```
+</details>
+
+![Distribution d'avantages cumulés sur un pool comparatif entre ggggppp, gyyppp](../stats/standard/ppp-compare-gggg-gyy-u0-above-advantage.png "Distribution d'avantages cumulés sur un pool comparatif entre ggggppp, gyyppp")
+
+Ici on observe que le 4 d'agilité fournit significativement plus d'avantages.
+
+<details>
+<summary>Commande</summary>
+
+```sh
+    python3 eote_dice.py -C -a -p ggggppp -p gyyppp  plot combined
+```
+</details>
+
+![Distribution spécial sur un pool comparatif entre ggggppp, gyyppp](../stats/standard/ppp-combined-gggg-gyy-u0.png "Distribution spécial sur un pool comparatif entre ggggppp, gyyppp")
+
+Cette distribution confirme et affine les observations ci-dessus.
+
+> [!Important]
+> Deux dés jaunes sont moins bons au global qu'un dé vert, ils apportent quelques chances de triomphe.
+> Ici le personnage avec 4 d'agilité est bien meilleur dans quasiment toutes les situations, nous avons regardé compétences vs pas de compétences, mais il est bon de rappeler qu'une caractéristique s'utilise avec 5-10 compétences, ce qui rend la caractéristique vraiment supérieure au global.
+
+Comment interpréter ces résultats ? Selon moi c'est étrange qu'un personnage entraîné ait juste plus de chance d'une réussite miraculeuse exceptionnelle. L'entraînement apporte au contraire une stabilité, une précision, un savoir-faire qui devrait réduire la variance.
